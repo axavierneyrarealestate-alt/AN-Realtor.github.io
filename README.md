@@ -112,7 +112,7 @@
 
 <section id="location">
   <h2>Office Location</h2>
-  <iframe src="https://www.google.com/maps?q=El+Paso&output=embed"></iframe>
+  <iframe src="https://share.google/TEAbsili3zqsdtu70"></iframe>
 </section>
 
 <section class="instagram">
