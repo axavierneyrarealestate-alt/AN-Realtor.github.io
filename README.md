@@ -5,116 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AN Realtor | Axavier Neyra</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #000;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #ffffff; color: #000; }
 
-    header {
-      background-color: #000;
-      color: #d4af37;
-      padding: 15px;
-      text-align: center;
-    }
+    header { background-color: #000; color: #d4af37; padding: 15px; text-align: center; }
+    header img { height: 70px; }
 
-    header img {
-      height: 70px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      background: #111;
-      padding: 10px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    nav { display: flex; justify-content: center; gap: 20px; background: #111; padding: 10px; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
 
     .hero {
       background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center/cover;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
+      height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center;
     }
 
-    .hero h1 {
-      font-size: 3em;
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 10px;
-    }
+    .hero h1 { font-size: 3em; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px; }
 
-    section {
-      padding: 50px;
-      max-width: 1100px;
-      margin: auto;
+    .subscribe-btn {
+      margin-top: 20px; padding: 12px 25px; background: #d4af37; color: black; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s;
     }
+    .subscribe-btn:hover { background: #b8962e; }
 
-    h2 {
-      color: #d4af37;
-    }
+    section { padding: 50px; max-width: 1100px; margin: auto; }
+    h2 { color: #d4af37; }
 
-    .services div {
-      margin-bottom: 30px;
-      padding: 20px;
-      border-left: 4px solid #d4af37;
-      background: #f9f9f9;
-    }
+    .services div { margin-bottom: 30px; padding: 20px; border-left: 4px solid #d4af37; background: #f9f9f9; }
 
-    .listings {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+    .listings { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
 
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
+    .card { border: 1px solid #ddd; border-radius: 10px; overflow: hidden; transition: transform 0.3s; }
+    .card:hover { transform: scale(1.05); }
+    .card img { width: 100%; height: 180px; object-fit: cover; }
+    .card-content { padding: 15px; }
 
-    .card:hover {
-      transform: scale(1.05);
-    }
+    iframe { width: 100%; height: 300px; border: none; }
 
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+    .instagram { text-align: center; margin-top: 20px; }
+    .instagram img { width: 50px; cursor: pointer; transition: transform 0.3s; }
+    .instagram img:hover { transform: scale(1.2); }
 
-    .card-content {
-      padding: 15px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-    }
-
-    .instagram {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    footer {
-      background: #000;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+    footer { background: #000; color: white; text-align: center; padding: 20px; }
   </style>
 </head>
 <body>
@@ -132,6 +61,11 @@
 
 <div class="hero">
   <h1>Luxury Real Estate in El Paso</h1>
+
+  <!-- Mailchimp Subscribe Button -->
+  <form action="YOUR_MAILCHIMP_URL" method="post" target="_blank">
+    <button class="subscribe-btn">Subscribe</button>
+  </form>
 </div>
 
 <section id="services" class="services">
@@ -183,7 +117,9 @@
 
 <section class="instagram">
   <h2>Follow Me</h2>
-  <a href="https://www.instagram.com/p/DWSung3Dt6T/?hl=en" target="_blank">View on Instagram</a>
+  <a href="https://www.instagram.com/p/DWSung3Dt6T/?hl=en" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+  </a>
 </section>
 
 <footer>
@@ -192,4 +128,3 @@
 
 </body>
 </html>
-
