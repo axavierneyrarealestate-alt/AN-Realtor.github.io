@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Primary meta tags for SEO -->
+  <title>EP Warehouse Leasing | El Paso Warehouse Space for Rent</title>
+  <meta name="description" content="View available warehouse space in El Paso, tenant services, repair requests, and owner listing services with Axavier Neyra Realtor." />
+  <!-- PWA: theme and icons -->
+  <meta name="theme-color" content="#111111" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <!-- Title repeated below was removed to prevent duplicate <title> tags -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f3ea;
+      color: #1f1f1f;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(17, 17, 17, 0.96);
+      border-bottom: 2px solid #d4af37;
+    }
+
+    .topbar {
+      max-width: 1250px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: #fff;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.7rem;
+      color: #d4af37;
+    }
+
+    .brand p {
+      margin: 4px 0 0;
+      color: #f3ead0;
+      font-size: 0.95rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111;
+      background: #d4af37;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.58)),
+        url('el-paso-sunset.jpg') center/cover no-repeat;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 30px 24px;
+      border-radius: 16px;
+      backdrop-filter: blur(3px);
+    }
+
+    .hero h2 {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+      color: #ffd76a;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 26px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-gold {
+      background: #d4af37;
+      color: #111;
+    }
+
+    .btn-dark {
+      background: #111;
+      color: #fff;
+      border: 1px solid #d4af37;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 14px;
+      font-size: 2rem;
+      color: #7a5b00;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 36px;
+      color: #4c4c4c;
+      line-height: 1.7;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 26px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      border: 1px solid rgba(212, 175, 55, 0.22);
+    }
+
+    .card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Gallery styles for listing images */
+    .listing-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .listing-gallery img {
+      flex: 1 1 calc(50% - 10px);
+      /* Maintain aspect ratio similar to the original single image */
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card-body {
+      padding: 22px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #7a5b00;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #111;
+      margin-bottom: 12px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+    }
+
+    .info-list li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .panel {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      border: 1px solid rgba(212, 175, 55, 0.22);
+    }
+
+    .panel h3 {
+      margin-top: 0;
+      color: #7a5b00;
+    }
+
+    .note {
+      background: #fff7df;
+      border-left: 5px solid #d4af37;
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin-top: 18px;
+      line-height: 1.6;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #d7c791;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+      background: #fffdf8;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: linear-gradient(135deg, #111, #2a2a2a);
+      color: white;
+      border-radius: 18px;
+      padding: 34px 24px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    }
+
+    .contact-box h3 {
+      color: #ffd76a;
+      margin-top: 0;
+    }
+
+    .contact-box a,
+    .panel a,
+    .card a {
+      color: inherit;
+    }
+
+    footer {
+      background: #111;
+      color: #e3d3a1;
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 72vh;
+      }
+
+      .hero h2 {
+        font-size: 1.7rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <h1>EP Warehouse Leasing</h1>
+        <p>Commercial Space • El Paso, Texas</p>
+      </div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#available">Available Space</a>
+        <a href="#tenant-services">Tenant Services</a>
+        <a href="#repairs">Repairs</a>
+        <a href="#owners">List Your Property With Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Warehouse Space Available in El Paso</h2>
+      <p>
+        View available warehouse space, tenant payment information, repair request details,
+        and owner services all in one place.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-gold" href="#available">View Available Space</a>
+        <a class="btn btn-dark" href="https://calendly.com/axavierneyra-realestate/30min" target="_blank">
+          Schedule a Showing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="available">
+    <div class="container">
+      <h2 class="section-title">Available Space</h2>
+      <p class="section-subtitle">
+        Current warehouse space available for lease.
+      </p>
+
+      <div class="card-grid">
+        <div class="card">
+          <!-- Gallery for 13710 Laura Ln -->
+          <div class="listing-gallery">
+            <img src="13710-laura-ln-exterior.jpg" alt="13710 Laura Ln exterior view of warehouse units" />
+            <img src="13710-laura-ln-interior.jpg" alt="13710 Laura Ln interior view of warehouse unit" />
+          </div>
+          <div class="card-body">
+            <h3>13710 Laura Ln</h3>
+            <div class="price">$900 / month</div>
+
+            <ul class="info-list">
+              <li><strong>Size:</strong> 20 x 40</li>
+              <li><strong>Square Footage:</strong> 800 SQFT</li>
+              <li><strong>Use:</strong> Warehouse / Commercial Space</li>
+            </ul>
+
+            <a class="btn btn-gold" href="https://calendly.com/axavierneyra-realestate/30min" target="_blank">
+              Schedule Showing
+            </a>
+
+            <div class="note">
+              <strong>Contact:</strong><br>
+              Axavier Neyra, Realtor<br>
+              <a href="tel:9153481482" style="color:#111; text-decoration:none;">(915) 348-1482</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tenant-services" style="background:#fffaf0;">
+    <div class="container">
+      <h2 class="section-title">Tenant Services</h2>
+      <p class="section-subtitle">
+        Applications and rent payments are handled through RentSpree.
+      </p>
+
+      <div class="split">
+        <div class="panel">
+          <h3>How to Apply</h3>
+          <p>
+            To apply, complete the RentSpree screening process first. Screening fees typically cost
+            <strong>$39.99 per applicant</strong> and may include a TransUnion credit report,
+            criminal background check, and eviction history.
+          </p>
+
+          <p>
+            Once your application has been reviewed and approved, continue following the RentSpree steps
+            to create your account and move forward with leasing.
+          </p>
+
+          <a class="btn btn-gold" href="https://apply.link/emAHfm4" target="_blank">
+            Application
+          </a>
+        </div>
+
+        <div class="panel">
+          <h3>How to Pay Rent</h3>
+          <ul class="info-list">
+            <li>Log in to your RentSpree account and open your dashboard.</li>
+            <li>Click the <strong>Rent Payment</strong> tab.</li>
+            <li>Select <strong>Pay Now</strong> for an immediate payment or <strong>Schedule Payment</strong> for a future payment.</li>
+            <li>Choose your payment method:
+              <br><strong>Bank Account (ACH):</strong> Free
+              <br><strong>Credit/Debit Card:</strong> 3% processing fee, up to $5,000 per transaction
+            </li>
+            <li>If your bank does not appear, manual verification may be required and can take a few days.</li>
+            <li>Review the terms and submit your payment.</li>
+          </ul>
+
+          <div class="note">
+            <strong>Auto Pay:</strong> If required under your lease, use the <strong>Schedule Payment</strong> option in your RentSpree profile to set up recurring payments.
+          </div>
+
+          <div class="note">
+            <strong>RentSpree Support:</strong><br>
+            Phone: <a href="tel:3235157757" style="color:#111; text-decoration:none;">(323) 515-7757</a><br>
+            Email: <a href="mailto:support@rentspree.com" style="color:#111; text-decoration:none;">support@rentspree.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="repairs">
+    <div class="container">
+      <h2 class="section-title">Repair Request</h2>
+      <p class="section-subtitle">
+        Submit a maintenance or repair request below.
+      </p>
+
+      <div class="split">
+        <div class="panel">
+          <h3>Send Repair Request</h3>
+
+          <form action="https://formsubmit.co/axavierneyra.realestate@gmail.com" method="POST" id="repairForm">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" id="emailSubject" name="_subject" value="Repairs - 13710 Laura Ln">
+
+            <label for="propertyAddress"><strong>Property Address</strong></label>
+            <select id="propertyAddress" name="Property Address" onchange="updateRepairSubject()" required>
+              <option value="13710 Laura Ln">13710 Laura Ln</option>
+              <option value="15720 Montana Ave">15720 Montana Ave</option>
+            </select>
+
+            <label for="unitNumber"><strong>Unit Name / Number</strong></label>
+            <input type="text" id="unitNumber" name="Unit Name / Number" placeholder="Enter unit name or number" required>
+
+            <label for="tenantName"><strong>Tenant Name</strong></label>
+            <input type="text" id="tenantName" name="Tenant Name" placeholder="Enter tenant name" required>
+
+            <label for="problemDescription"><strong>Brief Description of the Problem</strong></label>
+            <textarea id="problemDescription" name="Problem Description" placeholder="Describe the issue" required></textarea>
+
+            <button class="btn btn-gold" type="submit">Send Request</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h3>How Repair Requests Work</h3>
+          <p>
+            After submitting your request, the landlord or an authorized contact may reach out to schedule an appropriate time to review or complete the repair.
+          </p>
+
+          <div class="note">
+            <strong>Important Notice:</strong><br>
+            Submitting a repair request does not guarantee that the requested item is the responsibility of the landlord or that the repair will be approved. Repair responsibilities can vary by property and by lease agreement. Please review your lease for details regarding covered repairs and tenant obligations.
+          </div>
+
+          <div class="note">
+            Axavier Neyra, Realtor, is acting only as a communication point for certain property-related requests and is not serving as the property manager, contractor, or legal decision-maker for disputes or maintenance responsibility between tenants and landlords.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="owners" style="background:#fffaf0;">
+    <div class="container">
+      <h2 class="section-title">List Your Property With Us</h2>
+      <p class="section-subtitle">
+        We help make the leasing process easier by providing marketing, tenant screening support,
+        lease coordination, payment setup guidance, and website exposure for your property.
+      </p>
+
+      <div class="split">
+        <div class="panel">
+          <h3>How We Help Property Owners</h3>
+          <ul class="info-list">
+            <li>Promote your property to attract qualified tenants.</li>
+            <li>Assist with tenant screening through RentSpree.</li>
+            <li>Use appropriate Texas real estate contracts for leasing transactions.</li>
+            <li>Help set up rent payment collection through RentSpree.</li>
+            <li>Feature your property on this website for added exposure.</li>
+            <li>Provide a repair request submission option through this website so tenant requests can be sent directly to you or routed appropriately.</li>
+          </ul>
+
+          <div class="note">
+            Our goal is to help reduce the day-to-day stress of leasing by providing a more organized and professional process for owners and tenants.
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Send Property Information</h3>
+
+          <form action="https://formsubmit.co/axavierneyra.realestate@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Property Listing Inquiry">
+
+            <label for="ownerName"><strong>Name</strong></label>
+            <input type="text" id="ownerName" name="Owner Name" placeholder="Your name" required>
+
+            <label for="ownerProperty"><strong>Property Address</strong></label>
+            <input type="text" id="ownerProperty" name="Property Address" placeholder="Property address" required>
+
+            <label for="ownerPhone"><strong>Phone Number</strong></label>
+            <input type="tel" id="ownerPhone" name="Phone Number" placeholder="Phone number" required>
+
+            <label for="ownerDescription"><strong>Description of Property</strong></label>
+            <textarea id="ownerDescription" name="Property Description" placeholder="Tell us about the property" required></textarea>
+
+            <button class="btn btn-gold" type="submit">Send</button>
+          </form>
+
+          <div class="note">
+            Once submitted, we will contact you to schedule an appointment and discuss the next steps.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        Reach out for leasing information, showings, tenant questions, or property owner inquiries.
+      </p>
+
+      <div class="contact-box">
+        <h3>Axavier Neyra, Realtor</h3>
+        <p><a href="tel:9153481482" style="color:white; text-decoration:none;">(915) 348-1482</a></p>
+        <p><a href="mailto:axavierneyra.realestate@gmail.com" style="color:white; text-decoration:none;">axavierneyra.realestate@gmail.com</a></p>
+        <p>
+          <a class="btn btn-gold" href="https://calendly.com/axavierneyra-realestate/30min" target="_blank">
+            Book an Appointment
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 EP Warehouse Leasing | Axavier Neyra Realtor
+  </footer>
+
+  <script>
+    function updateRepairSubject() {
+      const property = document.getElementById("propertyAddress").value;
+      document.getElementById("emailSubject").value = "Repairs - " + property;
+    }
+
+    updateRepairSubject();
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(() => console.log('Service worker registered'))
+          .catch(err => console.log('Service worker registration failed', err));
+      });
+    }
+  </script>
+
+</body>
+</html>
