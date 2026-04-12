@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- List the canonical URL for the home page so search engines discover the site. -->
   <url>
-    <loc>https://YOUR-DOMAIN-URL/</loc>
+    <loc>https://axavierneyrarealestate-alt.github.io/AN-Realtor.github.io/</loc>
   </url>
 </urlset>

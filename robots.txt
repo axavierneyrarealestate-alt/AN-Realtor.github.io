@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Point search engines to the sitemap for this GitHub Pages site.
+Sitemap: https://axavierneyrarealestate-alt.github.io/AN-Realtor.github.io/sitemap.xml

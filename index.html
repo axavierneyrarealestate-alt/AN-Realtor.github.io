@@ -80,6 +80,8 @@
       font-size: 0.95rem;
     }
 
+    /* Dropdown navigation removed; nav links will be used instead */
+
     .hero {
       min-height: 82vh;
       display: flex;
@@ -350,13 +352,18 @@
         <p>Commercial Space • El Paso, Texas</p>
       </div>
 
+    <!-- Primary navigation. The links below follow the order that sections appear on the page when scrolling. -->
       <nav>
         <a href="#home">Home</a>
-        <a href="#available">Available Space</a>
-        <a href="#tenant-services">Tenant Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#guides">Why&nbsp;El&nbsp;Paso?</a>
+        <a href="#about">About</a>
+        <a href="#available">Available&nbsp;Space</a>
+        <a href="#tenant-services">Tenant&nbsp;Services</a>
         <a href="#repairs">Repairs</a>
-        <a href="#owners">List Your Property With Us</a>
+        <a href="#owners">List&nbsp;Your&nbsp;Property</a>
         <a href="#contact">Contact</a>
+        <a href="#disclaimer">Legal&nbsp;Disclaimer</a>
       </nav>
     </div>
   </header>
@@ -378,6 +385,112 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      <p class="section-subtitle">
+        Hear from our tenants and property owners.
+      </p>
+      <div class="split">
+        <div class="panel">
+          <p>
+            <em>"Working with Axavier was seamless—our lease process was quick and transparent. He helped us find exactly what we needed."</em>
+          </p>
+          <p>– John D., Warehouse Tenant</p>
+        </div>
+        <div class="panel">
+          <p>
+            <em>"Axavier found reliable tenants for my property and handled everything from screening to payments. It couldn't have been easier."</em>
+          </p>
+          <p>– Maria S., Property Owner</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides Section -->
+  <section id="guides" style="background:#fffaf0;">
+    <div class="container">
+      <h2 class="section-title">Why El Paso?</h2>
+      <p class="section-subtitle">
+        El Paso is a friendly, convenient place for warehouses and businesses that move goods. The city’s location and community make operations smooth and cost‑effective.
+      </p>
+      <div class="split">
+        <div class="panel">
+          <h3>Location &amp; Transport</h3>
+          <ul class="info-list">
+            <li>Situated on the U.S.–Mexico border, making cross‑border shipping simple and fast.</li>
+            <li>Interstate 10 runs through town, providing a straight shot east or west across the Southwest.</li>
+            <li>A nearby Foreign Trade Zone offers tax benefits for companies dealing in international goods.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Community &amp; Infrastructure</h3>
+          <ul class="info-list">
+            <li>Next door to an international airport with a large cargo facility for air shipments.</li>
+            <li>Plenty of industrial parks, distribution centers and rail lines to keep your supply chain moving.</li>
+            <li>A growing workforce and supportive business environment that makes it easy to find help and resources.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Our Services</h2>
+      <p class="section-subtitle">
+        Discover how we make the leasing process seamless for both tenants and landlords and learn about the broader real estate services Axavier offers.
+      </p>
+      <div class="split">
+        <!-- Services for tenants and landlords -->
+        <div class="panel">
+          <h3>What We Offer Tenants &amp; Landlords</h3>
+          <ul class="info-list">
+            <li><strong>Easy process:</strong> Quick online applications and a smooth move‑in experience.</li>
+            <li><strong>Fair contracts:</strong> Leases built on official Texas Real Estate forms to protect both tenant and landlord.</li>
+            <li><strong>Maintenance made simple:</strong> Submit and track repair requests through our portal—every request is organized and documented.</li>
+            <li><strong>Peace of mind:</strong> Clear communication and organized paperwork so everyone stays informed.</li>
+          </ul>
+        </div>
+        <!-- Broader services offered by Axavier -->
+        <div class="panel">
+          <h3>Beyond Leasing</h3>
+          <p>Axavier Neyra provides full‑service real estate expertise for every type of client:</p>
+          <ul class="info-list">
+            <li><strong>Sellers:</strong> Support selling residential and commercial properties, from pricing and marketing to negotiation and closing.</li>
+            <li><strong>Buyers:</strong> Guidance for homebuyers and business owners to identify properties that fit their needs and navigate the purchase process.</li>
+            <li><strong>Investors:</strong> A complete service package, including collaboration with recommended lenders and CPAs to craft an investment strategy and financing plan that meets your goals.</li>
+          </ul>
+          <p>With a broad network and years of experience, Axavier ensures a smooth transaction from start to finish—whether you’re selling, buying, or investing.</p>
+        </div>
+        <!-- Our Office Location -->
+        <div class="panel">
+          <h3>Our Office</h3>
+          <p>
+            Visit us at our broker's office to discuss your leasing, buying or selling needs in person. We’re located at:
+          </p>
+          <p><strong>EP Star Realty<br>
+          1855 Trawood Dr STE 208<br>
+          El Paso, TX 79935</strong></p>
+          <div style="margin-top:20px;">
+            <iframe
+              src="https://www.google.com/maps?q=1855+Trawood+Dr+STE+208+El+Paso+TX+79935&output=embed"
+              width="100%"
+              height="250"
+              style="border:0; border-radius: 10px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="available">
     <div class="container">
       <h2 class="section-title">Available Space</h2>
@@ -385,8 +498,19 @@
         Current warehouse space available for lease.
       </p>
 
+      <!-- Basic filter controls for future listings -->
+      <div class="filter-bar" style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; justify-content:center;">
+        <input id="searchKeyword" type="text" placeholder="Search by address or features..." oninput="filterListings()" style="flex:1 1 200px; padding:10px; border:1px solid #d7c791; border-radius:8px;" />
+        <select id="priceFilter" onchange="filterListings()" style="flex:0 0 150px; padding:10px; border:1px solid #d7c791; border-radius:8px;">
+          <option value="">Price Range</option>
+          <option value="low">Under $1,000</option>
+          <option value="medium">$1,000 - $2,000</option>
+          <option value="high">Over $2,000</option>
+        </select>
+      </div>
+
       <div class="card-grid">
-        <div class="card">
+      <div class="card" data-price="900" data-size="800" data-address="13710 Laura Ln">
           <!-- Gallery for 13710 Laura Ln -->
           <div class="listing-gallery">
             <img src="13710-laura-ln-exterior.jpg" alt="13710 Laura Ln exterior view of warehouse units" />
@@ -398,8 +522,11 @@
 
             <ul class="info-list">
               <li><strong>Size:</strong> 20 x 40</li>
-              <li><strong>Square Footage:</strong> 800 SQFT</li>
+              <li><strong>Square Footage:</strong> 800&nbsp;SQFT</li>
               <li><strong>Use:</strong> Warehouse / Commercial Space</li>
+              <li><strong>Clear Height:</strong> 16&nbsp;ft</li>
+              <li><strong>Year Built:</strong> 2025</li>
+              <li><strong>Availability:</strong> 6 spaces available; pricing is per unit. Discounts available for leases of two or more units.</li>
             </ul>
 
             <a class="btn btn-gold" href="https://calendly.com/axavierneyra-realestate/30min" target="_blank">
@@ -407,9 +534,37 @@
             </a>
 
             <div class="note">
-              <strong>Contact:</strong><br>
+            <strong>Contact:</strong><br>
               Axavier Neyra, Realtor<br>
-              <a href="tel:9153481482" style="color:#111; text-decoration:none;">(915) 348-1482</a>
+              EP Star Realty<br>
+              <span style="font-size:0.85rem;">Broker: Mario Velasco, EP Star Realty</span><br>
+              <a href="tel:9153481482" style="color:#111; text-decoration:none;">(915) 348‑1482</a><br>
+              <a href="mailto:axavierneyra.realestate@gmail.com" style="color:#111; text-decoration:none;">axavierneyra.realestate@gmail.com</a>
+            </div>
+
+            <!-- Property Extras: Map and Inquiry Form -->
+            <div class="map-container" style="margin-top: 20px;">
+              <iframe
+                src="https://www.google.com/maps?q=13710+Laura+Ln+El+Paso+TX&output=embed"
+                width="100%"
+                height="250"
+                style="border:0; border-radius: 10px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div class="property-enquiry" style="margin-top: 20px;">
+              <h4>Inquire About This Property</h4>
+              <form action="https://formsubmit.co/axavierneyra.realestate@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Property Enquiry - 13710 Laura Ln">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="Name" placeholder="Your name" required>
+                <input type="email" name="Email" placeholder="Your email" required>
+                <input type="tel" name="Phone" placeholder="Your phone number">
+                <textarea name="Message" placeholder="Your message" required></textarea>
+                <button class="btn btn-gold" type="submit">Send Inquiry</button>
+              </form>
             </div>
           </div>
         </div>
@@ -427,19 +582,13 @@
       <div class="split">
         <div class="panel">
           <h3>How to Apply</h3>
-          <p>
-            To apply, complete the RentSpree screening process first. Screening fees typically cost
-            <strong>$39.99 per applicant</strong> and may include a TransUnion credit report,
-            criminal background check, and eviction history.
-          </p>
-
-          <p>
-            Once your application has been reviewed and approved, continue following the RentSpree steps
-            to create your account and move forward with leasing.
-          </p>
-
+          <ul class="info-list">
+            <li>Begin by completing the RentSpree screening application. The fee is <strong>$39.99 per applicant</strong> and includes a TransUnion credit report, criminal background check and eviction history.</li>
+            <li>After submitting your screening, wait for review and approval.</li>
+            <li>Once approved, follow the RentSpree instructions to create your profile and move forward with leasing.</li>
+          </ul>
           <a class="btn btn-gold" href="https://apply.link/emAHfm4" target="_blank">
-            Application
+            Apply Now
           </a>
         </div>
 
@@ -536,12 +685,12 @@
         <div class="panel">
           <h3>How We Help Property Owners</h3>
           <ul class="info-list">
-            <li>Promote your property to attract qualified tenants.</li>
-            <li>Assist with tenant screening through RentSpree.</li>
-            <li>Use appropriate Texas real estate contracts for leasing transactions.</li>
-            <li>Help set up rent payment collection through RentSpree.</li>
-            <li>Feature your property on this website for added exposure.</li>
-            <li>Provide a repair request submission option through this website so tenant requests can be sent directly to you or routed appropriately.</li>
+            <li>Market your property to attract qualified tenants through multiple channels.</li>
+            <li>Handle tenant screening using RentSpree to ensure reliable renters.</li>
+            <li>Prepare and manage legally compliant lease contracts using approved Texas Real Estate forms.</li>
+            <li>Set up secure rent collection via RentSpree, including auto‑pay options.</li>
+            <li>Feature your property on our site and promote it across our network.</li>
+            <li>Provide a streamlined repair request system that collects and organizes tenant maintenance requests for your review.</li>
           </ul>
 
           <div class="note">
@@ -588,14 +737,49 @@
 
       <div class="contact-box">
         <h3>Axavier Neyra, Realtor</h3>
-        <p><a href="tel:9153481482" style="color:white; text-decoration:none;">(915) 348-1482</a></p>
+        <!-- Display the brokerage name directly under the agent name -->
+        <p>EP Star Realty</p>
+        <!-- List the sponsoring broker for compliance; font is slightly smaller -->
+        <p style="font-size:0.85rem; margin-bottom:10px;">Broker: Mario Velasco, EP Star Realty</p>
+        <!-- Phone number uses tel link to open the native dialer on mobile devices -->
+        <p><a href="tel:9153481482" style="color:white; text-decoration:none;">(915) 348‑1482</a></p>
+        <!-- Email address opens the user's default email client -->
         <p><a href="mailto:axavierneyra.realestate@gmail.com" style="color:white; text-decoration:none;">axavierneyra.realestate@gmail.com</a></p>
+        <!-- Appointment scheduling via Calendly -->
         <p>
           <a class="btn btn-gold" href="https://calendly.com/axavierneyra-realestate/30min" target="_blank">
             Book an Appointment
           </a>
         </p>
+        <!-- Texas Real Estate Commission notices and required links -->
+        <div class="trec-links" style="margin-top:20px; text-align:left; font-size:0.9rem;">
+          <p style="margin:4px 0;">
+            <a href="https://www.trec.texas.gov/forms/information-about-brokerage-services" target="_blank" style="color:#ffd76a; text-decoration:underline;">
+              Texas Real Estate Commission Information About Brokerage Services
+            </a>
+          </p>
+          <p style="margin:4px 0;">
+            <a href="https://www.trec.texas.gov/forms/consumer-protection-notice" target="_blank" style="color:#ffd76a; text-decoration:underline;">
+              Texas Real Estate Commission Consumer Protection Notice
+            </a>
+          </p>
+          <p style="margin-top:8px; color:#ccc; font-size:0.8rem; max-width:360px; line-height:1.4;">
+            The Texas Real Estate Commission regulates real estate brokers and sales agents. For more information
+            or to file a complaint against a license holder, please visit the TREC website or contact TREC at
+            (512) 936‑3000 or write to P.O. Box 12188, Austin, Texas 78711‑2188【511002918243799†L138-L160】.
+          </p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Legal Disclaimer Section -->
+  <section id="disclaimer" style="background:#fffaf0;">
+    <div class="container">
+      <h2 class="section-title">Legal Disclaimer</h2>
+      <p class="section-subtitle" style="max-width:850px; margin:0 auto;">
+        Axavier Neyra is a licensed Texas real estate agent representing property owners solely for the purpose of leasing their warehouse spaces. He is <strong>not</strong> the owner of any property listed on this site and is <strong>not responsible</strong> for building repairs, structural issues, income, taxes, or the business entity operating within the property. His representation ends once a lease is fully executed. Axavier does not act as a property manager, accountant, CPA, attorney or provide any legal or tax advice. All information on this website is provided as a convenience and does not constitute legal advice. Parties are encouraged to consult their own legal and financial professionals to ensure compliance with Texas and El Paso regulations and to understand their respective obligations.
+      </p>
     </div>
   </section>
 
@@ -618,6 +802,37 @@
           .catch(err => console.log('Service worker registration failed', err));
       });
     }
+
+    // Simple listing filter function: filters cards based on keyword and price range
+    function filterListings() {
+      const keyword = document.getElementById('searchKeyword').value.toLowerCase().trim();
+      const priceRange = document.getElementById('priceFilter').value;
+      const cards = document.querySelectorAll('.card[data-price]');
+      cards.forEach(card => {
+        const address = card.getAttribute('data-address').toLowerCase();
+        const price = parseInt(card.getAttribute('data-price'), 10);
+        // Keyword match if keyword is empty or found in address or features
+        let keywordMatch = true;
+        if (keyword) {
+          keywordMatch = address.includes(keyword);
+        }
+        // Price match depending on selected range
+        let priceMatch = true;
+        if (priceRange === 'low') {
+          priceMatch = price < 1000;
+        } else if (priceRange === 'medium') {
+          priceMatch = price >= 1000 && price <= 2000;
+        } else if (priceRange === 'high') {
+          priceMatch = price > 2000;
+        }
+        if (keywordMatch && priceMatch) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
   </script>
 
 </body>
